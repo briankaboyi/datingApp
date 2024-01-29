@@ -25,7 +25,8 @@ class ButtonWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(text, style: TextStyle(fontSize: 20, color: textColor)),
+            if (text != null)
+            Text(text!, style: TextStyle(fontSize: 20, color: textColor)),
 
             SizedBox(width: 18),
             Icon(
