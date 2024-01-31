@@ -1,3 +1,4 @@
+import 'package:dating_app/pages/dashboard.dart';
 import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/widgets/button_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -50,7 +51,7 @@ class MyHomePage extends GetView {
                     alignment: Alignment.centerLeft,
                     child: ButtonWidget(
                       onPressed: () {
-                        Get.to(ProfilePage());
+                        Get.to(Dashboard());
                       },
                       text: 'Get Started',
                       textColor: Colors.white,
