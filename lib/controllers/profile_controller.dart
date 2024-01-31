@@ -5,7 +5,8 @@ class ProfileController{
     {
       'image':'assets/black.jpg',
       'title':'Mike',
-      'age':'19'
+      'age':'19',
+
     },{
       'image':'assets/blue.jpg',
       'title':'Diane',

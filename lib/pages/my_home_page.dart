@@ -51,7 +51,7 @@ class MyHomePage extends GetView {
                     alignment: Alignment.centerLeft,
                     child: ButtonWidget(
                       onPressed: () {
-                        Get.to(Dashboard());
+                        Get.off(Dashboard());
                       },
                       text: 'Get Started',
                       textColor: Colors.white,
