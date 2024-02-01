@@ -13,12 +13,19 @@ class Dashboard extends GetView<ProfileController> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        leading: TextWidget(
-          color: Colors.black,
-          value: 'MATCHES',
-          textAlign: TextAlign.start,
-          fontWeight: FontWeight.w400,
-          fontSize: 15,
+
+        title: Align(alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: const EdgeInsets.only(top:25.0),
+            child: TextWidget(
+
+              color: Colors.black54,
+              value: 'MATCHES',
+              textAlign: TextAlign.start,
+              fontWeight: FontWeight.w400,
+              fontSize: 15,
+            ),
+          ),
         ),
       ),
       body: Column(
@@ -50,16 +57,39 @@ class Dashboard extends GetView<ProfileController> {
                   );
                 }),
           ),
-          SizedBox(
-              //search bar
+          Padding(
+            padding: const EdgeInsets.only(top:20.0,right: 20,left: 20),
+            child: Container(
+                //search bar
+              width: Get.width,
+              height: 60,
+              color: Color(0xFFF6F5F3),alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: TextField(
+                  decoration:InputDecoration(
+                    hintText: 'Search',
+                    hintStyle: TextStyle(fontSize: 20,color: Colors.black54),
+                    suffixIcon: Icon(Icons.search ),
+                    border: InputBorder.none,
+                  )
+                ),
               ),
+                ),
+          ),
           Column(
             children: [
-              TextWidget(
-                  value: 'CHAT',
-                  textAlign: TextAlign.start,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400),
+              Padding(
+                padding: const EdgeInsets.only(left: 20,top:35.0),
+                child: Align(alignment: Alignment.centerLeft,
+                  child: TextWidget(
+                      color: Colors.black54,
+                      value: 'CHAT',
+                      textAlign: TextAlign.start,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
               // chat caorasel
             ],
           )
