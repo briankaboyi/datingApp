@@ -17,8 +17,8 @@ class AvatarWidget extends GetView {
         child: Column(children: [
           Container(
 
-            width: 70,
-            height: 70,
+            width: 60,
+            height: 60,
             child: ClipOval(
               child: image,
 
