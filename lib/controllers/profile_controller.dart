@@ -8,7 +8,6 @@ class ProfileController{
       'age':'19',
       'message':'That sounds like alot of fun, Would you.....',
       'time':'5 mins'
-
     },{
       'image':'assets/blue.jpg',
       'title':'Diane',
