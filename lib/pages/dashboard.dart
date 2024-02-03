@@ -1,4 +1,5 @@
 import 'package:dating_app/controllers/profile_controller.dart';
+import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -47,6 +48,7 @@ class Dashboard extends GetView<ProfileController> {
                         InkWell(
                             onTap: () {
                               controller.currentProfile.value = index;
+                              Get.off(ProfilePage());
                             },
                             child: AvatarWidget(
                               image: Image.asset(e['image']),
@@ -61,10 +63,12 @@ class Dashboard extends GetView<ProfileController> {
           Padding(
             padding: const EdgeInsets.only(top: 20.0, right: 20, left: 20),
             child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadiusDirectional.circular(15),
+                  color: Color(0xFFF6F5F3)),
               //search bar
               width: Get.width,
-              height: 60,
-              color: Color(0xFFF6F5F3), alignment: Alignment.center,
+              height: 60, alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0),
                 child: TextField(
@@ -80,7 +84,7 @@ class Dashboard extends GetView<ProfileController> {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 35.0),
+                padding: const EdgeInsets.only(left: 25, top: 35.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: TextWidget(
@@ -109,6 +113,7 @@ class Dashboard extends GetView<ProfileController> {
                             InkWell(
                                 onTap: () {
                                   controller.currentProfile.value = index;
+                                  Get.off(ProfilePage());
                                 },
                                 child: ChatWidget(
                                     image: Image.asset(e['image']),
@@ -126,35 +131,30 @@ class Dashboard extends GetView<ProfileController> {
         ],
       ),
       bottomNavigationBar: Container(
-        height: 80,
-        child: BottomNavigationBar(iconSize: 30,type: BottomNavigationBarType.fixed,
+        height: 97.8,
+        child: BottomNavigationBar(
+          iconSize: 30,
+          type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home_filled,
                 color: Colors.black,
               ),
-              label: "Explore",
+              label: "",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.heart_broken_rounded, color: Colors.black),
-              label: "Cloud",
+              label: "",
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.chat_bubble_outlined, color: Colors.black),
-                label: "Leaf"),
+                label: ""),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person, color: Colors.black),
-                label: "Likes"),
-
+                label: ""),
           ],
-          /* onTap: (v){
-            print(v);
-            controller.currentIndex.value=v;
-            if (controller.c != null) {
-              controller.c!.jumpToPage(v);
-            }
-          },*/
+
         ),
       ),
     );

@@ -35,49 +35,60 @@ class ChatWidget extends GetView{
               ],
             ),
           ),
-          Column(
-
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Aligns the widgets at the center of the row
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: TextWidget(
-                      value: '$text, $age',
-                      textAlign: TextAlign.start,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22,
+          Expanded(
+            child: Column(
+            
+              crossAxisAlignment: CrossAxisAlignment.start,
+            
+              children: [
+                Row(
+            
+                  children: [
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: TextWidget(
+                            value: '$text, $age',
+                            textAlign: TextAlign.start,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: TextWidget(
-                      value: time,
-                      textAlign: TextAlign.start,
-                      fontWeight: FontWeight.w300,
-                      fontSize: 16,
+                    Expanded(child: Container(),),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: TextWidget(
+                            value: time,
+                            textAlign: TextAlign.start,
+                            fontWeight: FontWeight.w300,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-
-                  Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: TextWidget(
-                      value:message,
-                      textAlign: TextAlign.start,
-                      fontWeight: FontWeight.w300, fontSize: 15,
+                  ],
+                ),
+                Row(
+                  children: [
+            
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: TextWidget(
+                        value:message,
+                        textAlign: TextAlign.start,
+                        fontWeight: FontWeight.w300, fontSize: 15,
+                      ),
                     ),
-                  ),
-
-                ],
-              ),
-            ],
+            
+                  ],
+                ),
+              ],
+            ),
           ),
 
 

@@ -1,3 +1,4 @@
+import 'package:dating_app/pages/dashboard.dart';
 import 'package:dating_app/widgets/text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +35,17 @@ class ProfilePage extends GetView {
                 children: [
                   AppBar(
                     actions: [
-                      Icon(
-                        Icons.cancel_rounded,
-                        size: 32,
-                        color: Colors.white60,
+                      InkWell(
+                        onTap:(
+
+                        ){
+                          Get.off(Dashboard());
+                        },
+                        child: Icon(
+                          Icons.cancel_rounded,
+                          size: 32,
+                          color: Colors.white60,
+                        ),
                       )
                     ],
                     leading: SizedBox(),
@@ -142,7 +150,7 @@ class ProfilePage extends GetView {
                             children: [
                               ButtonWidget(
                                 onPressed: () {
-                                  Get.to(ProfilePage());
+                                  Get.off(Dashboard());
                                 },
                                 textColor: Colors.white54,
                                 icon: Icons.cancel ?? Icons.error_outline,
@@ -150,12 +158,13 @@ class ProfilePage extends GetView {
                               ),
                               ButtonWidget(
                                 onPressed: () {
-                                  Get.to(ProfilePage());
+                                  Get.off(Dashboard());
                                 },
                                 textColor: Colors.white,
                                 icon: Icons.heart_broken ??
                                     Icons.heart_broken_rounded,
                                 bgColor: Color(0xFFF2681B),
+                                
                               ),
                             ],
                           ),
