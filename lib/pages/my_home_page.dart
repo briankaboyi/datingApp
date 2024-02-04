@@ -38,10 +38,10 @@ class MyHomePage extends GetView {
                   alignment: Alignment.centerLeft,
                   child: TextWidget(
                     value:
-                    'We combine cutting edge \ntechnology with a modern \napproach to matchmaking ',
+                    'We combine cutting-edge \ntechnology with a modern \napproach to matchmaking ',
                     textAlign: TextAlign.left,
                     fontWeight: FontWeight.w200,
-                    fontSize: 20,
+                    fontSize: 18,
                   ),
                 ),
               ),

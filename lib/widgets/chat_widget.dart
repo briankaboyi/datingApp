@@ -25,8 +25,8 @@ class ChatWidget extends GetView{
               children: [
                 Container(
 
-                    width: 60,
-                    height: 60,
+                    width: 50,
+                    height: 50,
                     child: ClipOval(
                       child: image,
 
@@ -35,49 +35,60 @@ class ChatWidget extends GetView{
               ],
             ),
           ),
-          Column(
-
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Aligns the widgets at the center of the row
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: TextWidget(
-                      value: '$text, $age',
-                      textAlign: TextAlign.start,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22,
+          Expanded(
+            child: Column(
+            
+              crossAxisAlignment: CrossAxisAlignment.start,
+            
+              children: [
+                Row(
+            
+                  children: [
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: TextWidget(
+                            value: '$text, $age',
+                            textAlign: TextAlign.start,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: TextWidget(
-                      value: time,
-                      textAlign: TextAlign.start,
-                      fontWeight: FontWeight.w300,
-                      fontSize: 16,
+                    Expanded(child: Container(),),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: TextWidget(
+                            value: time,
+                            textAlign: TextAlign.start,
+                            fontWeight: FontWeight.w300,
+                            fontSize: 13,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-
-                  Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: TextWidget(
-                      value:message,
-                      textAlign: TextAlign.start,
-                      fontWeight: FontWeight.w300, fontSize: 15,
+                  ],
+                ),
+                Row(
+                  children: [
+            
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: TextWidget(
+                        value:message,
+                        textAlign: TextAlign.start,
+                        fontWeight: FontWeight.w300, fontSize: 13,
+                      ),
                     ),
-                  ),
-
-                ],
-              ),
-            ],
+            
+                  ],
+                ),
+              ],
+            ),
           ),
 
 

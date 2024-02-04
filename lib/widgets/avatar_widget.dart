@@ -17,8 +17,8 @@ class AvatarWidget extends GetView {
         child: Column(children: [
           Container(
 
-            width: 60,
-            height: 60,
+            width: 50,
+            height: 50,
             child: ClipOval(
               child: image,
 
@@ -29,13 +29,13 @@ class AvatarWidget extends GetView {
             child: TextWidget(
               value: text,
               textAlign: TextAlign.start,
-              fontWeight: FontWeight.bold, fontSize: 15,
+              fontWeight: FontWeight.bold, fontSize: 13,
             ),
           ),
           TextWidget(
             value: age,
             textAlign: TextAlign.start,
-            fontWeight: FontWeight.w500, fontSize: 15,
+            fontWeight: FontWeight.bold, fontSize: 13,
           ),
         ]),
       ),

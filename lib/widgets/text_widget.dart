@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TextWidget extends StatelessWidget{
   final String value;
@@ -12,13 +13,14 @@ class TextWidget extends StatelessWidget{
     return Text(
         value,
       textAlign: textAlign,
-      style: TextStyle(
+      style: GoogleFonts.raleway( textStyle: TextStyle(
         color: color,
         fontSize: fontSize,
         fontFamily: "Montserrat",
         fontWeight: fontWeight,
 
-      )
+      )),
+
     );
   }
 

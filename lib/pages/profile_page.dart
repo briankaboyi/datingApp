@@ -1,3 +1,4 @@
+import 'package:dating_app/pages/dashboard.dart';
 import 'package:dating_app/widgets/text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,33 +12,39 @@ class ProfilePage extends GetView {
     // TODO: implement build
     return Scaffold(
         body: Container(
-          decoration:BoxDecoration(
-        image: DecorationImage(
-        image: AssetImage('assets/girl.jpg'), fit: BoxFit.cover)) ,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/girl.jpg'), fit: BoxFit.cover)),
       child: Stack(
         children: [
           Container(
-            decoration:BoxDecoration(
-        gradient: LinearGradient(
-        begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.black12,Colors.black38,
-            Colors.black87,
-          ],
-        ),
-    ),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.black12,
+                  Colors.black38,
+                  Colors.black87,
+                ],
+              ),
+            ),
             child: Padding(
-              padding: const EdgeInsets.all(30.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppBar(
                     actions: [
-                      Icon(
-                        Icons.cancel_rounded,
-                        size: 32,
-                        color: Colors.white60,
+                      InkWell(
+                        onTap: () {
+                          Get.off(Dashboard());
+                        },
+                        child: Icon(
+                          Icons.cancel_rounded,
+                          size: 25,
+                          color: Colors.white60,
+                        ),
                       )
                     ],
                     leading: SizedBox(),
@@ -62,7 +69,7 @@ class ProfilePage extends GetView {
                                         color: Colors.white,
                                         value: "Peggie, 23 ",
                                         textAlign: TextAlign.left,
-                                        fontSize: 25,
+                                        fontSize: 20,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -82,7 +89,7 @@ class ProfilePage extends GetView {
                                       color: Colors.white,
                                       value: '-300ft from you',
                                       textAlign: TextAlign.center,
-                                      fontSize: 20,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.w300,
                                     ),
                                   ],
@@ -108,7 +115,7 @@ class ProfilePage extends GetView {
                                         bottom: 5.0,
                                         top: 5.0),
                                     child: Text(e,
-                                        style: TextStyle(color: Colors.white)),
+                                        style: TextStyle(color: Colors.white,fontSize: 14)),
                                   ));
                             }).toList(),
                           ),
@@ -117,13 +124,13 @@ class ProfilePage extends GetView {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 5.0),
+                              padding: const EdgeInsets.only(bottom: 5.0,),
                               child: TextWidget(
                                 color: Colors.white70,
                                 value: 'BIO ',
                                 textAlign: TextAlign.start,
                                 fontWeight: FontWeight.w400,
-                                fontSize: 20,
+                                fontSize: 16,
                               ),
                             ),
                             TextWidget(
@@ -132,7 +139,7 @@ class ProfilePage extends GetView {
                                   'Hey there! My name is Peggie and Im a fashion \nphotographer. I love going to concerts \nand festivals. Lets grab some coffee and see \nwhere things go! ',
                               textAlign: TextAlign.start,
                               fontWeight: FontWeight.w400,
-                              fontSize: 20,
+                              fontSize: 16,
                             ),
                           ],
                         ),
@@ -142,7 +149,7 @@ class ProfilePage extends GetView {
                             children: [
                               ButtonWidget(
                                 onPressed: () {
-                                  Get.to(ProfilePage());
+                                  Get.off(Dashboard());
                                 },
                                 textColor: Colors.white54,
                                 icon: Icons.cancel ?? Icons.error_outline,
@@ -150,7 +157,7 @@ class ProfilePage extends GetView {
                               ),
                               ButtonWidget(
                                 onPressed: () {
-                                  Get.to(ProfilePage());
+                                  Get.off(Dashboard());
                                 },
                                 textColor: Colors.white,
                                 icon: Icons.heart_broken ??

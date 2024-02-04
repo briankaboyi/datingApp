@@ -18,20 +18,20 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 180,
-      height: 60,
+      width: 150,
+      height: 50,
       child: ElevatedButton(
         onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (text != null)
-            Text(text!, style: TextStyle(fontSize: 20, color: textColor)),
+            Text(text!, style: TextStyle(fontSize: 16, color: textColor)),
 
-            SizedBox(width: 18),
+            SizedBox(width: 14),
             Icon(
               icon,
-              size: 30.0,
+              size: 20.0,
               color: textColor,
             ), // Use the provided text
           ],
