@@ -53,8 +53,9 @@ class ChatWidget extends GetView{
                             textAlign: TextAlign.start,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
+
                           ),
-                        ),
+          )
                       ],
                     ),
                     Expanded(child: Container(),),
@@ -66,14 +67,17 @@ class ChatWidget extends GetView{
                             value: time,
                             textAlign: TextAlign.start,
                             fontWeight: FontWeight.w300,
-                            fontSize: 13,
+          fontSize: 16,)
+                        )
+                          ]
                           ),
-                        ),
+
                       ],
                     ),
                   ],
                 ),
-                Row(
+          ),
+          Row(
                   children: [
             
                     Padding(
@@ -81,7 +85,9 @@ class ChatWidget extends GetView{
                       child: TextWidget(
                         value:message,
                         textAlign: TextAlign.start,
+
                         fontWeight: FontWeight.w300, fontSize: 13,
+
                       ),
                     ),
             
@@ -89,13 +95,13 @@ class ChatWidget extends GetView{
                 ),
               ],
             ),
-          ),
-
-
-
-
-        ]),
-      ),
+          )
     );
+
+
+
+
+
+
   }
 }

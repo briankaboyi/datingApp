@@ -37,12 +37,14 @@ class ProfilePage extends GetView {
                   AppBar(
                     actions: [
                       InkWell(
-                        onTap: () {
+
+                        onTap:(){
                           Get.off(Dashboard());
                         },
                         child: Icon(
                           Icons.cancel_rounded,
                           size: 25,
+
                           color: Colors.white60,
                         ),
                       )
@@ -163,6 +165,7 @@ class ProfilePage extends GetView {
                                 icon: Icons.heart_broken ??
                                     Icons.heart_broken_rounded,
                                 bgColor: Color(0xFFF2681B),
+                                
                               ),
                             ],
                           ),

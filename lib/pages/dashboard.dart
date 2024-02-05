@@ -11,9 +11,7 @@ import '../widgets/avatar_widget.dart';
 import '../widgets/chat_widget.dart';
 
 class Dashboard extends GetView<ProfileController> {
-  RxInt myIndex =0.obs;
-
-
+  RxInt myIndex = 0.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,9 @@ class Dashboard extends GetView<ProfileController> {
         title: Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: const EdgeInsets.only(top: 25.0, ),
+            padding: const EdgeInsets.only(
+              top: 25.0,
+            ),
             child: TextWidget(
               color: Colors.black54,
               value: 'MATCHES',
@@ -66,7 +66,7 @@ class Dashboard extends GetView<ProfileController> {
                 }),
           ),
           Padding(
-            padding: const EdgeInsets.only( right: 15, left: 15),
+            padding: const EdgeInsets.only(right: 15, left: 15),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadiusDirectional.circular(15),
@@ -80,7 +80,7 @@ class Dashboard extends GetView<ProfileController> {
                     decoration: InputDecoration(
                   hintText: 'Search',
                   hintStyle: TextStyle(fontSize: 18, color: Colors.black38),
-                  suffixIcon: Icon(Icons.search,color:Colors.black26 ),
+                  suffixIcon: Icon(Icons.search, color: Colors.black26),
                   border: InputBorder.none,
                 )),
               ),
@@ -138,10 +138,10 @@ class Dashboard extends GetView<ProfileController> {
       bottomNavigationBar: Container(
         height: 70,
         child: BottomNavigationBar(
-          onTap: (index){
+          onTap: (index) {
             myIndex.value = index;
 
-            switch(myIndex.value){
+            switch (myIndex.value) {
               case 0:
                 Get.off(MyHomePage());
                 break;
@@ -155,29 +155,27 @@ class Dashboard extends GetView<ProfileController> {
             }
           },
           currentIndex: myIndex.value,
+          backgroundColor: Color(0xFFF6F5F3),
           iconSize: 30,
-          backgroundColor:  Color(0xFFF6F5F3),
           type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home_filled,
-                color:  Colors.black54,
+                color: Colors.black54,
               ),
               label: "",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.heart_broken_rounded, color:  Colors.black54),
+              icon: Icon(Icons.heart_broken_rounded, color: Colors.black54),
               label: "",
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.chat_bubble_outlined, color: Colors.black),
                 label: ""),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person, color: Colors.black54),
-                label: ""),
+                icon: Icon(Icons.person, color: Colors.black54), label: ""),
           ],
-
         ),
       ),
     );
