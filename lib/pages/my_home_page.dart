@@ -1,3 +1,4 @@
+import 'package:dating_app/other_pages/nba_data.dart';
 import 'package:dating_app/pages/dashboard.dart';
 import 'package:dating_app/pages/profile_page.dart';
 import 'package:dating_app/widgets/button_widget.dart';
@@ -10,6 +11,7 @@ import '../widgets/text_widget.dart';
 class MyHomePage extends GetView {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
 
       body: Container(

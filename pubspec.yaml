@@ -33,6 +33,7 @@ dependencies:
 
   get: ^4.3.8
   google_fonts: ^6.1.0
+  dio: ^5.4.0
 
 
   # The following adds the Cupertino Icons font to your application.
