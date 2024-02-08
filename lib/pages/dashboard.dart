@@ -34,106 +34,108 @@ class Dashboard extends GetView<ProfileController> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 130, // Replace with your desired height
-            width: Get.width,
-            //top caorusel
-            child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: controller.profileList.length,
-                itemBuilder: (BuildContext BuildContext, index) {
-                  var e = controller.profileList[index];
-
-                  return Center(
-                    child: Row(
-                      children: [
-                        InkWell(
-                            onTap: () {
-                              controller.currentProfile.value = index;
-                              Get.off(ProfilePage());
-                            },
-                            child: AvatarWidget(
-                              image: Image.asset(e['image']),
-                              text: e['title'],
-                              age: e['age'],
-                            ))
-                      ],
-                    ),
-                  );
-                }),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 15, left: 15),
-            child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.circular(15),
-                  color: Color(0xFFF6F5F3)),
-              //search bar
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 130, // Replace with your desired height
               width: Get.width,
-              height: 60, alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: TextField(
-                    decoration: InputDecoration(
-                  hintText: 'Search',
-                  hintStyle: TextStyle(fontSize: 18, color: Colors.black38),
-                  suffixIcon: Icon(Icons.search, color: Colors.black26),
-                  border: InputBorder.none,
-                )),
-              ),
+              //top caorusel
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: controller.profileList.length,
+                  itemBuilder: (BuildContext BuildContext, index) {
+                    var e = controller.profileList[index];
+        
+                    return Center(
+                      child: Row(
+                        children: [
+                          InkWell(
+                              onTap: () {
+                                controller.currentProfile.value = index;
+                                Get.off(ProfilePage());
+                              },
+                              child: AvatarWidget(
+                                image: Image.asset(e['image']),
+                                text: e['title'],
+                                age: e['age'],
+                              ))
+                        ],
+                      ),
+                    );
+                  }),
             ),
-          ),
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15, top: 20.0),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: TextWidget(
-                      color: Colors.black54,
-                      value: 'CHAT',
-                      textAlign: TextAlign.start,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w400),
+            Padding(
+              padding: const EdgeInsets.only(right: 15, left: 15),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadiusDirectional.circular(15),
+                    color: Color(0xFFF6F5F3)),
+                //search bar
+                width: Get.width,
+                height: 60, alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: TextField(
+                      decoration: InputDecoration(
+                    hintText: 'Search',
+                    hintStyle: TextStyle(fontSize: 18, color: Colors.black38),
+                    suffixIcon: Icon(Icons.search, color: Colors.black26),
+                    border: InputBorder.none,
+                  )),
                 ),
               ),
-              // chat caorasel
-              SizedBox(
-                height: 415, // Replace with your desired height
-                width: Get.width,
-                //top caorusel
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
-                    itemCount: controller.profileList.length,
-                    itemBuilder: (BuildContext BuildContext, index) {
-                      var e = controller.profileList[index];
-
-                      return Center(
-                        child: Row(
-                          children: [
-                            InkWell(
-                                onTap: () {
-                                  controller.currentProfile.value = index;
-                                  Get.off(ProfilePage());
-                                },
-                                child: ChatWidget(
-                                    image: Image.asset(e['image']),
-                                    text: e['title'],
-                                    age: e['age'],
-                                    message: e['message'],
-                                    time: e['time']))
-                          ],
-                        ),
-                      );
-                    }),
-              ),
-            ],
-          )
-        ],
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 15, top: 20.0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextWidget(
+                        color: Colors.black54,
+                        value: 'CHAT',
+                        textAlign: TextAlign.start,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ),
+                // chat caorasel
+                SizedBox(
+                  height: 415, // Replace with your desired height
+                  width: Get.width,
+                  //top caorusel
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      itemCount: controller.profileList.length,
+                      itemBuilder: (BuildContext BuildContext, index) {
+                        var e = controller.profileList[index];
+        
+                        return Center(
+                          child: Row(
+                            children: [
+                              InkWell(
+                                  onTap: () {
+                                    controller.currentProfile.value = index;
+                                    Get.off(ProfilePage());
+                                  },
+                                  child: ChatWidget(
+                                      image: Image.asset(e['image']),
+                                      text: e['title'],
+                                      age: e['age'],
+                                      message: e['message'],
+                                      time: e['time']))
+                            ],
+                          ),
+                        );
+                      }),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
       bottomNavigationBar: Container(
         height: 70,
