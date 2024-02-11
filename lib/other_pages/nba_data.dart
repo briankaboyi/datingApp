@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dating_app/other_pages/Teams.dart';
+import 'package:dating_app/other_pages/team_data.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -58,7 +59,7 @@ class NbaData extends GetView<Teams> {
                           child: InkWell(
                             onTap: () {
                               controller.teamId.value = controller.jsonList[index]['id'];
-                              controller.testid();
+                              Get.to(() => TeamData());
                             },
                             child: Container(
                               height: 60,
