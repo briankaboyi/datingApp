@@ -145,14 +145,23 @@ class Dashboard extends GetView<ProfileController> {
 
             switch (myIndex.value) {
               case 0:
-                Get.off(MyHomePage());
+                // Get.off(MyHomePage());
+            Container(
+                child: TextWidget(value: "case 0", textAlign: TextAlign.center, fontSize: 34, fontWeight: FontWeight.bold),
+              );
                 break;
               case 1:
-                Get.off(ProfilePage());
+                // Get.off(ProfilePage());
+                Container(
+                  child: TextWidget(value: "case 1", textAlign: TextAlign.center, fontSize: 34, fontWeight: FontWeight.bold),
+                );
                 break;
 
               case 3:
-                Get.off(ProfilePage());
+                // Get.off(ProfilePage());
+                Container(
+                  child: TextWidget(value: "case 2", textAlign: TextAlign.center, fontSize: 34, fontWeight: FontWeight.bold),
+                );
                 break;
             }
           },
